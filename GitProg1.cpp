@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <string>
 
 using namespace std;
@@ -10,32 +9,42 @@ int main()
     char currOp, prevOp;
     while(1)
     {
-        cout<<prevCount;
 
-        cout<<"Enter Number: ";
-        if(CurrentNum==0)
+        
+        if(prevCount==0)
         {
-            cin>>CurrentNum;
+            //cout<<"here1\n";
+            cout<<"Enter Number: ";
+            cin>>prevCount;
+            goodIn=1;
         }
 
         else
         {
             if(prevOp=='+')
             {
-                prevCount=prevCount+CurrentNum;
+                //cout<<"here2\n";
+                cout<<"Enter Number: ";
                 cin>>CurrentNum;
+                prevCount=prevCount+CurrentNum;
+                cout<<prevCount;
                 goodIn=1;
             }
 
             else if(prevOp=='-')
             {
-                prevCount=prevCount-CurrentNum;
+                //cout<<"here3\n";
+                cout<<"Enter Number: ";
                 cin>>CurrentNum;
+                prevCount=prevCount-CurrentNum;
+                cout<<prevCount;
                 goodIn=1;
             }
 
             else if(prevOp=='=')
             {
+                //cout<<"here4\n";
+                cout<<"Enter Number: ";
                 cout<<prevCount;
                 prevCount=0;
                 goodIn=0;
@@ -43,21 +52,18 @@ int main()
         }
 
         while(goodIn==1)
-        {
-            
-            cout<<"Enter your next operation : ";
+        { 
+            cout<<"\nEnter your next operation : ";
             cin>>prevOp;
-            if((prevOp != '+') || (prevOp != '-'))
+            if((prevOp == '+') || (prevOp == '-') || prevOp == '=')
             {
-                cout<<"invalid operation, try again\n";
+                goodIn=0;
             }
 
             else
             {
-                goodIn=0;
+               cout<<"invalid operation, try again\n";
             }
         }
-
-
     }
 }
