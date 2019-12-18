@@ -41,11 +41,30 @@ int main()
                 goodIn=1;
             }
 
+            else if(prevOp=='*')
+            {
+                //cout<<"here3\n";
+                cout<<"Enter Number: ";
+                cin>>CurrentNum;
+                prevCount=prevCount*CurrentNum;
+                cout<<prevCount;
+                goodIn=1;
+            }
+
+            else if(prevOp=='/')
+            {
+                //cout<<"here3\n";
+                cout<<"Enter Number: ";
+                cin>>CurrentNum;
+                prevCount=prevCount/CurrentNum;
+                cout<<prevCount;
+                goodIn=1;
+            }
+
             else if(prevOp=='=')
             {
                 //cout<<"here4\n";
-                cout<<"Enter Number: ";
-                cout<<prevCount;
+                cout<<"Result: " << prevCount << "\n";
                 prevCount=0;
                 goodIn=0;
             }
@@ -55,7 +74,7 @@ int main()
         { 
             cout<<"\nEnter your next operation : ";
             cin>>prevOp;
-            if((prevOp == '+') || (prevOp == '-') || prevOp == '=')
+            if((prevOp == '+') || (prevOp == '-') || (prevOp == '*') || (prevOp == '/') || prevOp == '=')
             {
                 goodIn=0;
             }
